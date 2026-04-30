@@ -19,6 +19,7 @@ flowchart LR
     G --> H
     H --> I[09. Troubleshooting & Best Practices]
     I --> J[10. Lab End-to-End]
+    J --> K[11. Tutorial Aktivasi Arc-enabled SQL]
 ```
 
 ## Daftar Modul
@@ -35,6 +36,7 @@ flowchart LR
 | 08 | [Migrasi ke Azure SQL](modules/08-migrasi.md) | Migration assessment, target Azure SQL MI / SQL on Azure VM |
 | 09 | [Troubleshooting & Best Practices](modules/09-troubleshooting.md) | Ekstensi unhealthy, log, network, kasus umum |
 | 10 | [Lab End-to-End](modules/10-lab-end-to-end.md) | Skenario praktik dari nol sampai migrasi |
+| 11 | [Tutorial Aktivasi Arc-enabled SQL](modules/11-aktivasi-arc-enabled-sql.md) | Tutorial fokus aktivasi (Portal, PowerShell, CLI, at-scale) dengan diagram Mermaid |
 
 ## Cara Menggunakan Seri Ini
 
@@ -42,6 +44,20 @@ flowchart LR
 2. Jika sudah familiar dengan Azure Arc, langsung ke modul 03–04 untuk implementasi.
 3. Untuk operasional harian (DBA), fokus modul 06–07 dan 09.
 4. Untuk modernisasi / cloud journey, fokus modul 08.
+5. Untuk **quick start aktivasi** (langkah-langkah praktis dengan diagram), buka modul 11.
+
+## Repository
+
+- GitHub: <https://github.com/edhotp/Belajar-Azure-Arc-Enable-SQL>
+- Clone:
+
+  ```bash
+  git clone https://github.com/edhotp/Belajar-Azure-Arc-Enable-SQL.git
+  ```
+
+## Kontribusi
+
+Koreksi, saran, atau penambahan materi sangat diapresiasi. Silakan buka **Issue** atau ajukan **Pull Request** di repository GitHub di atas.
 
 ## Referensi Utama (Microsoft Learn)
 
