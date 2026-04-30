@@ -20,6 +20,7 @@ flowchart LR
     H --> I[09. Troubleshooting & Best Practices]
     I --> J[10. Lab End-to-End]
     J --> K[11. Tutorial Aktivasi Arc-enabled SQL]
+    K --> L[12. Azure Arc Gateway]
 ```
 
 ## Daftar Modul
@@ -37,6 +38,7 @@ flowchart LR
 | 09 | [Troubleshooting & Best Practices](modules/09-troubleshooting.md) | Ekstensi unhealthy, log, network, kasus umum |
 | 10 | [Lab End-to-End](modules/10-lab-end-to-end.md) | Skenario praktik dari nol sampai migrasi |
 | 11 | [Tutorial Aktivasi Arc-enabled SQL](modules/11-aktivasi-arc-enabled-sql.md) | Tutorial fokus aktivasi (Portal, PowerShell, CLI, at-scale) dengan diagram Mermaid |
+| 12 | [Azure Arc Gateway](modules/12-azure-arc-gateway.md) | Konsep, kapan dipakai, dan langkah aktivasi Arc gateway untuk menyederhanakan endpoint outbound |
 
 ## Cara Menggunakan Seri Ini
 
