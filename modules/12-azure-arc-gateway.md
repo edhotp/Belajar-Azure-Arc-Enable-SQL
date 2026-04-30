@@ -27,7 +27,7 @@ flowchart LR
         A[Arc Agent / SQL Extension] --> P[Arc Proxy<br/>localhost:40343]
     end
     P --> EP[Enterprise Proxy / Firewall]
-    EP -->|HTTPS| GW[(Arc Gateway<br/>&lt;prefix&gt;.gw.arc.azure.com)]
+    EP -->|HTTPS| GW[("Arc Gateway<br/>{prefix}.gw.arc.azure.com")]
     GW --> AZ[Azure Services<br/>ARM, HIS, Entra ID, dsb]
 ```
 
@@ -82,7 +82,7 @@ sequenceDiagram
 
     SQLExt->>Agent: Telemetry / inventory / ESU
     Agent->>Proxy: HTTPS via local proxy
-    Proxy->>GW: Forward via &lt;prefix&gt;.gw.arc.azure.com
+    Proxy->>GW: Forward via {prefix}.gw.arc.azure.com
     GW->>Azure: Route ke endpoint tujuan
     Azure-->>SQLExt: Response
 ```
