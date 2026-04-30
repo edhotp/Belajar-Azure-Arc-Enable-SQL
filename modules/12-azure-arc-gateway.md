@@ -59,6 +59,7 @@ flowchart TD
 - Hanya tersedia di **Azure public cloud** (bukan US Gov / China cloud).
 - **Tidak direkomendasikan** jika environment **mewajibkan TLS termination/inspection** untuk endpoint Arc — kecuali Anda meng-skip inspection untuk URL gateway.
 - Maksimal **5 Arc gateway resource per subscription**.
+- **Proxy bypass tidak didukung** saat Arc gateway aktif (`azcmagent config set proxy.bypass` tidak akan berlaku).
 - Untuk Azure Local: gateway **harus dikonfigurasi saat deployment**, tidak bisa setelah deployment.
 
 > Referensi batasan: [Current limitations](https://learn.microsoft.com/azure/azure-arc/kubernetes/arc-gateway-simplify-networking#current-limitations)
@@ -68,6 +69,8 @@ flowchart TD
 ## 3. Hubungan dengan Arc-enabled SQL Server
 
 Arc-enabled SQL Server berjalan **di atas Connected Machine agent**. Setelah server terkoneksi via Arc gateway, **Azure extension for SQL Server otomatis ikut menggunakan jalur gateway** (melalui Arc proxy lokal). Tidak ada konfigurasi tambahan khusus untuk extension SQL.
+
+> Microsoft secara eksplisit mencantumkan **Azure Extension for SQL Server** sebagai skenario yang **tidak memerlukan endpoint tambahan** saat menggunakan Arc gateway. Lihat [More scenarios — Scenarios that don't require more endpoints](https://learn.microsoft.com/azure/azure-arc/servers/arc-gateway#more-scenarios).
 
 ```mermaid
 sequenceDiagram
@@ -123,12 +126,12 @@ flowchart LR
 az extension add --name arcgateway
 
 az arcgateway create \
-  --name "arcgw-prod-eastus" \
+  --gateway-name "arcgw-prod-eastus" \
   --resource-group "rg-arc" \
   --location "eastus"
 
-# Ambil resource ID gateway
-az arcgateway show -g rg-arc -n arcgw-prod-eastus --query id -o tsv
+# Lihat URL & resource ID gateway yang baru dibuat
+az arcgateway list -g rg-arc -o table
 ```
 
 > Referensi: [Create the Arc gateway resource](https://learn.microsoft.com/azure/azure-arc/servers/arc-gateway#create-the-arc-gateway-resource)
